@@ -1,15 +1,19 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="sidebar">
-    <NavMenu />
-</div>
+ 
+    <div class="main bg ">
+        <div class="bgblack top-row pl-4">
+            <div class="container ">
+                <div class="  d-flex justify-content-between p-3">
 
-<div class="main">
-    <div class="top-row px-4">
-        <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
-    </div>
+                    <a class="navbar-brand" href="/"><h2>Davin Davies</h2></a>
 
-    <div class="content px-4">
-        @Body
+                    <TopNavMenu />
+
+                </div>
+            </div>
+        </div>
+        <div class="container content  ">
+            @Body
+        </div>
     </div>
-</div>
