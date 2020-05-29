@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
-using PersonalWebsite.Models;
+
 using SendGrid;
 using SendGrid.Helpers.Mail;
+using SharedResources.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,19 +12,12 @@ namespace PersonalWebsite.Services
 {
     public class EmailService : IEmailService
     {
-        readonly IConfiguration _configuration;
-        public EmailService(IConfiguration configuration )
-        {
-            _configuration = configuration;
-        }
-        public string ApiKey { get; set; }
+       
 
-        public async Task Execute(ContactMessage contactMessage)
+        public async Task Execute(ContactMessage contactMessage,string apiKey)
         {
 
-            // temporary measure to get the message working will be put in user secret for release
-            string apiKey =  Environment.GetEnvironmentVariable("SendGridApiKey");
-            SendGridClient client = new SendGridClient(apiKey);
+             SendGridClient client = new SendGridClient(apiKey);
             EmailAddress from = new EmailAddress(contactMessage.EmailAddress, contactMessage.Name);
             string subject = contactMessage.Message;
             EmailAddress to = new EmailAddress("davindavies@outlook.com", "Davin Davies");
@@ -33,5 +27,6 @@ namespace PersonalWebsite.Services
             var response = await client.SendEmailAsync(msg);
         }
 
+        
     }
 }

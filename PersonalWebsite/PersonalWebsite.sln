@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30105.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalWebsite", "PersonalWebsite\PersonalWebsite.csproj", "{B3FD0DA8-370A-42D5-B414-A52AEE9E7BA9}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailApi", "MailApi\MailApi.csproj", "{A86BA1DA-A552-4046-A427-E10B0D30FFBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedResources", "SharedResources\SharedResources.csproj", "{14386249-86E0-4C62-B0B0-5443C474C3C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B3FD0DA8-370A-42D5-B414-A52AEE9E7BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3FD0DA8-370A-42D5-B414-A52AEE9E7BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3FD0DA8-370A-42D5-B414-A52AEE9E7BA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A86BA1DA-A552-4046-A427-E10B0D30FFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A86BA1DA-A552-4046-A427-E10B0D30FFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A86BA1DA-A552-4046-A427-E10B0D30FFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A86BA1DA-A552-4046-A427-E10B0D30FFBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14386249-86E0-4C62-B0B0-5443C474C3C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14386249-86E0-4C62-B0B0-5443C474C3C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14386249-86E0-4C62-B0B0-5443C474C3C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14386249-86E0-4C62-B0B0-5443C474C3C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

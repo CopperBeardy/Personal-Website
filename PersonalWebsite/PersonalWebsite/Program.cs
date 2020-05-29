@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Text;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using PersonalWebsite.Services;
 
 namespace PersonalWebsite
 {
@@ -15,7 +14,7 @@ namespace PersonalWebsite
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
-            builder.Services.AddScoped<IEmailService, EmailService>();
+      
             
             
             builder.Services.AddSingleton(new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
