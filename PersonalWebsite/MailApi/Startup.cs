@@ -44,7 +44,7 @@ namespace MailApi
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors(opts => opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseRouting();
 
             app.UseAuthorization();

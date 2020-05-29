@@ -1,5 +1,5 @@
 ﻿@page  "/Contact"
-
+@inject HttpClient Http
 
     <div class="pagecontainer mt-5 p-3">
         <section id="contact" class="contact">
@@ -40,13 +40,13 @@
     </div>
         @code {
 
-            
+
             string Status = "Not submitted";
             ContactMessage contactMessage = new ContactMessage();
 
-           async void FormSubmitted()
+            async void FormSubmitted()
             {
-                          
+               await Http.PostAsJsonAsync("https://localhost:5002/api/mail", contactMessage );
                 // callling the MailApi/MailController/Send(contactMessage)
 
                 // Post data to the server, etc

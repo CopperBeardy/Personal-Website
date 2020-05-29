@@ -24,11 +24,11 @@ namespace MailApi.Controllers
         }
 
         [HttpPost]
-        public async Task Send(ContactMessage contactMessage)
+        public async Task<StatusCodeResult> Send(ContactMessage contactMessage)
         {
            
             await _emailService.Execute(contactMessage, _sendGridOptions.Value.ApiKey);
-        
+            return StatusCode(200);
         }
     }
 }

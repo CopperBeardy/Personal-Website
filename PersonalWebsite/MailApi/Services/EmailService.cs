@@ -1,11 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
-
+﻿
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using SharedResources.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace PersonalWebsite.Services
@@ -14,17 +11,22 @@ namespace PersonalWebsite.Services
     {
        
 
-        public async Task Execute(ContactMessage contactMessage,string apiKey)
+        public async Task<Response> Execute(ContactMessage contactMessage,string apiKey)
         {
 
-             SendGridClient client = new SendGridClient(apiKey);
-            EmailAddress from = new EmailAddress(contactMessage.EmailAddress, contactMessage.Name);
-            string subject = contactMessage.Message;
-            EmailAddress to = new EmailAddress("davindavies@outlook.com", "Davin Davies");
-            string plainTextContent = contactMessage.Message;
-            string htmlContent = $"<p>{contactMessage.Message}</p>";
-            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
-            var response = await client.SendEmailAsync(msg);
+           
+                var client = new SendGridClient(apiKey);
+                var from = new EmailAddress(contactMessage.EmailAddress, contactMessage.Name);
+                var subject = contactMessage.Message;
+                var to = new EmailAddress("davindavies@outlook.com", "Mr D Davies");
+                var plainTextContent = contactMessage.Message;
+                var htmlContent = $"<p>{contactMessage.Message}</p>";
+                var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+
+                var response = await client.SendEmailAsync(msg);
+                return response;
+            
+
         }
 
         
