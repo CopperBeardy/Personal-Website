@@ -1,0 +1,59 @@
+﻿@page  "/Contact"
+@inject IEmailService EmailService
+
+
+    <div class="pagecontainer mt-5 p-3">
+        <section id="contact" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>Contact Me</p>
+                </div>
+                <div class="mb-3">
+                    <ContactTopPanel />
+                </div>
+                    <EditForm Model=@contact OnSubmit="FormSubmitted">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <InputText @bind-Value=contact.Name placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validate"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <InputText @bind-Value="contact.EmailAddress" type="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                                <div class="validate"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <InputText @bind-Value="contact.Subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validate"></div>
+                        </div>
+                        <div class="form-group">
+                            <InputTextArea @bind-Value="contact.Message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></InputTextArea>
+                            <div class="validate"></div>
+                        </div>
+
+                        <div class="text-center "><button class="btn btn-info" type="submit">Send Message</button></div>
+
+                    </EditForm>
+              
+
+            </div>
+        </section>
+
+    </div>
+        @code {
+
+            
+            string Status = "Not submitted";
+            ContactMessage contact = new ContactMessage();
+
+           async void FormSubmitted()
+            {
+                          
+                await EmailService.Execute(contact);
+
+                // Post data to the server, etc
+            }
+
+        }
