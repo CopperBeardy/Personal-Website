@@ -17,7 +17,7 @@ namespace PersonalWebsite
             builder.RootComponents.Add<App>("app");
             builder.Services.AddScoped<IEmailService, EmailService>();
             
-
+            
             builder.Services.AddSingleton(new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             await builder.Build().RunAsync();
