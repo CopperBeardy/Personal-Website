@@ -18,7 +18,9 @@ namespace MailApi
 {
     public class Startup
     {
-     
+
+        readonly string PermittedOrigins = "_permittedOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,9 +31,24 @@ namespace MailApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: PermittedOrigins,
+                    builder =>
+                    {   
+                        /// 
+                        // TODO ---- Must replace with host address of main website!! 
+                        ///
+                        builder.WithOrigins("https://localhost:5001")
+                                .WithMethods("POST")
+                                .AllowAnyHeader();
+                    });
+            });
+
+
             services.Configure<SendGridOptions>(Configuration.GetSection(SendGridOptions.SendGridApiKey));
             services.AddScoped<IEmailService, EmailService>();
+
             services.AddControllers();
         }
 
@@ -44,7 +61,10 @@ namespace MailApi
             }
 
             app.UseHttpsRedirection();
-            app.UseCors(opts => opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+            app.UseCors(PermittedOrigins);
+
+
             app.UseRouting();
 
             app.UseAuthorization();

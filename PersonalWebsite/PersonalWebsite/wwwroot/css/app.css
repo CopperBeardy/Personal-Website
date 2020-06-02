@@ -445,20 +445,13 @@ ul {
     background: rgba(255, 255, 255, 0.08);
 }
 
-    .contact .info-box i.bx {
-        font-size: 24px;
-        color: #dd8627;
-        border-radius: 50%;
-        padding: 14px;
-        float: left;
-        background: rgba(255, 255, 255, 0.1);
-    }
+   
 
     .contact .info-box h3 {
         font-size: 20px;
         color: rgba(255, 255, 255, 0.5);
         font-weight: 700;
-        margin: 10px 0 8px 68px;
+       
     }
 
     .contact .info-box p {
@@ -466,8 +459,105 @@ ul {
         color: #fff;
         line-height: 24px;
         font-size: 14px;
-        margin: 0 0 0 68px;
+        margin: 10 0 0 58px;
     }
+
+
+.contact .bl-email-form {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+    .contact .bl-email-form .validate {
+        display: none;
+        color: red;
+        margin: 0 0 15px 0;
+        font-weight: 400;
+        font-size: 13px;
+    }
+
+    .contact .bl-email-form .error-message {
+        display: none;
+        background: rgba(255, 255, 255, 0.08);
+        background: #ed3c0d;
+        text-align: center;
+        padding: 15px;
+        font-weight: 600;
+    }
+
+    .contact .bl-email-form .sent-message {
+        display: none;
+        background: rgba(255, 255, 255, 0.08);
+        background: #dd8627;
+        text-align: center;
+        padding: 15px;
+        font-weight: 600;
+    }
+
+    
+
+       
+
+    .contact .bl-email-form input, .contact .bl-email-form textarea {
+        border-radius: 0;
+        box-shadow: none;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 0;
+        transition: 0.3s;
+        color: #fff;
+    }
+
+        .contact .vl-email-form input:focus, .contact .bl-email-form textarea:focus {
+            background-color: rgba(255, 255, 255, 0.11);
+        }
+
+        .contact .bl-email-form input::-webkit-input-placeholder, .contact .bl-email-form textarea::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+        }
+
+        .contact .bl-email-form input::-moz-placeholder, .contact .bl-email-form textarea::-moz-placeholder {
+            color: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+        }
+
+        .contact .bl-email-form input:-ms-input-placeholder, .contact .bl-email-form textarea:-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+        }
+
+        .contact .bl-email-form input::-ms-input-placeholder, .contact .bl-email-form textarea::-ms-input-placeholder {
+            color: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+        }
+
+        .contact .bl-email-form input::placeholder, .contact .bl-email-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+        }
+
+    .contact .bl-email-form input {
+        padding: 20px 15px;
+    }
+
+    .contact .php-email-form textarea {
+        padding: 12px 15px;
+    }
+
+.contact .bl-email-form button[type="submit"] {
+    background: #dd8627;
+    border: 0;
+    padding: 10px 30px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 4px;
+}
+
+    .contact .bl-email-form button[type="submit"]:hover {
+        background: #dd8627;
+    }
+
 .twitter {
    max-width: 40px;
 }

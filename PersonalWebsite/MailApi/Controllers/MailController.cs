@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using PersonalWebsite.Services;
+using SendGrid;
 using SharedResources.Models;
 
 namespace MailApi.Controllers
@@ -24,11 +25,16 @@ namespace MailApi.Controllers
         }
 
         [HttpPost]
-        public async Task<StatusCodeResult> Send(ContactMessage contactMessage)
+        public async Task<bool> Send(ContactMessage contactMessage)
         {
-           
-            await _emailService.Execute(contactMessage, _sendGridOptions.Value.ApiKey);
-            return StatusCode(200);
+
+            Response Queryresult = await _emailService.Execute(contactMessage, _sendGridOptions.Value.ApiKey);
+            if (!Queryresult.StatusCode.Equals(System.Net.HttpStatusCode.Accepted))
+            {
+                return (false);
+            }
+            return true;
+
         }
     }
 }

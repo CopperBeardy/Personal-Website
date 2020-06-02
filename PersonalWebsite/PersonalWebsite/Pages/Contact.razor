@@ -1,5 +1,5 @@
 ﻿@page  "/Contact"
-@inject HttpClient Http
+
 
     <div class="pagecontainer mt-5 p-3">
         <section id="contact" class="contact">
@@ -12,44 +12,24 @@
                 <div class="mb-3">
                     <ContactTopPanel />
                 </div>
-                    <EditForm Model=@contactMessage OnSubmit="FormSubmitted">
-                        <div class="form-row">
-                            <div class="col-md-6">
-                                <InputText @bind-Value=contactMessage.Name placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                <div class="validate"></div>
-                            </div>
-                            <div class="col-md-6">
-                                <InputText @bind-Value="contactMessage.EmailAddress" type="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                                <div class="validate"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <InputText @bind-Value="contactMessage.Subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                            <div class="validate"></div>
-                        </div>
-                        <div class="form-group">
-                            <InputTextArea @bind-Value="contactMessage.Message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></InputTextArea>
-                            <div class="validate"></div>
-                        </div>
+           
+                    <ContactBottomPanel />
+              
+                   
 
-                        <div class="text-center "><button class="btn btn-info" type="submit">Send Message</button></div>
-                    </EditForm>
+              
+                <div class="bl-email-form">
+                    Your message has been recieved, thank you for contacting me.
+                </div>
+            
+               
             </div>
         </section>
 
     </div>
-        @code {
+    
+@code{
 
-
-            string Status = "Not submitted";
-            ContactMessage contactMessage = new ContactMessage();
-
-            async void FormSubmitted()
-            {
-               await Http.PostAsJsonAsync("https://localhost:5002/api/mail", contactMessage );
-                // callling the MailApi/MailController/Send(contactMessage)
-
-                // Post data to the server, etc
-            }
-
-        }
+   
+}
+  
