@@ -238,7 +238,7 @@ ul {
 #header {
     transition: ease-in-out 0.3s;
     position: relative;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     z-index: 997;
@@ -587,5 +587,9 @@ ul {
         transform: rotate(360deg);
     }
 }
+
+
+
+
 
 

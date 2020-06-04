@@ -25,16 +25,10 @@ namespace MailApi.Controllers
         }
 
         [HttpPost]
-        public async Task<bool> Send(ContactMessage contactMessage)
+        public async Task Send(ContactMessage contactMessage)
         {
-
-            Response Queryresult = await _emailService.Execute(contactMessage, _sendGridOptions.Value.ApiKey);
-            if (!Queryresult.StatusCode.Equals(System.Net.HttpStatusCode.Accepted))
-            {
-                return (false);
-            }
-            return true;
-
+            //TODO add exception handling
+             await _emailService.Execute(contactMessage, _sendGridOptions.Value.ApiKey);   
         }
     }
 }
