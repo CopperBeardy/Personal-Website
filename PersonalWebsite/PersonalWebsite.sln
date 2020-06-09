@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalWebsite", "Personal
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MailApi", "MailApi\MailApi.csproj", "{A86BA1DA-A552-4046-A427-E10B0D30FFBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedResources", "SharedResources\SharedResources.csproj", "{14386249-86E0-4C62-B0B0-5443C474C3C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedResources", "SharedResources\SharedResources.csproj", "{14386249-86E0-4C62-B0B0-5443C474C3C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -6,7 +6,7 @@ html, body {
     background-image: url("../img/webback.jpg");
     /* Full height */
     min-height: 100%;
-    height: 100%;
+  
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
@@ -170,6 +170,38 @@ ul {
 }
 .oi-check {
     color: #dd8627;
+}
+
+section {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 140px;
+  bottom: 100%;
+  opacity: 0;
+  transition: ease-in-out 0.4s;
+  z-index: 2;
+}
+
+section.section-show {
+  top: 100px;
+  bottom: auto;
+  opacity: 1;
+  padding-bottom: 45px;
+}
+
+section .container {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 30px;
+}
+
+@media (max-width: 768px) {
+  section {
+    top: 120px;
+  }
+  section.section-show {
+    top: 80px;
+  }
 }
 
 .section-title h2 {
@@ -494,10 +526,6 @@ ul {
         font-weight: 600;
     }
 
-    
-
-       
-
     .contact .bl-email-form input, .contact .bl-email-form textarea {
         border-radius: 0;
         box-shadow: none;
@@ -588,8 +616,138 @@ ul {
     }
 }
 
+.resume .resume-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
 
+.resume .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+}
 
+    .resume .resume-item h4 {
+        line-height: 18px;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        color: #dd8627;
+        margin-bottom: 10px;
+    }
 
+    .resume .resume-item h5 {
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 5px 15px;
+        display: inline-block;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .resume .resume-item ul {
+        padding-left: 20px;
+    }
+
+        .resume .resume-item ul li {
+            padding-bottom: 10px;
+        }
+
+    .resume .resume-item:last-child {
+        padding-bottom: 0;
+    }
+
+    .resume .resume-item::before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50px;
+        left: -9px;
+        top: 0;
+        background: #dd8627;
+        border: 2px solid #dd8627;
+    }
+
+.portfolio .icon-box {
+    text-align: center;
+    background: rgba(204, 204, 204, 0.1);
+    padding: 80px 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+    .portfolio .icon-box .icon {
+        margin: 0 auto;
+        width: 64px;
+        height: 64px;
+        background: #dd8627;
+        border-radius: 5px;
+        transition: all .3s ease-out 0s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        transform-style: preserve-3d;
+    }
+
+        .portfolio .icon-box .icon i {
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .portfolio .icon-box .icon::before {
+            position: absolute;
+            content: '';
+            left: -8px;
+            top: -8px;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 5px;
+            transition: all .3s ease-out 0s;
+            transform: translateZ(-1px);
+        }
+
+    .portfolio .icon-box h4 {
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+
+        .portfolio .icon-box h4 a {
+            color: #fff;
+        }
+
+    .portfolio .icon-box p {
+        line-height: 24px;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    .portfolio .icon-box:hover {
+        background: #dd8627;
+        border-color: #dd8627;
+    }
+
+        .portfolio .icon-box:hover .icon {
+            background: #fff;
+        }
+
+            .portfolio .icon-box:hover .icon i {
+                color: #dd8627;
+            }
+
+            .portfolio .icon-box:hover .icon::before {
+                background: #dd8627;
+            }
+
+        .portfolio .icon-box:hover h4 a, .portfolio .icon-box:hover p {
+            color: #fff;
+        }
 
 
