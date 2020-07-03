@@ -268,9 +268,6 @@ section .container {
 
 
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
 #header {
     transition: ease-in-out 0.3s;
     position: relative;
@@ -339,10 +336,7 @@ section .container {
         align-items: center;
     }
 }
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/* Desktop Navigation */
+
 .nav-menu {
     margin-top: 35px;
 }
