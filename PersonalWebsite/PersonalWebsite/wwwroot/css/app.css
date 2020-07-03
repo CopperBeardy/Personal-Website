@@ -2,8 +2,20 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+
+.bg {
     /* The image used */
-   
+    background-image: url("../img/webback.jpg");
+    /* Full height */
+    min-height: 100vh;
+    min-width:100vw;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: auto;
 }
 
 .pagecontainer{    
@@ -12,19 +24,6 @@ html, body {
     color:white;
   
 }
-
-.bg {
-    background-image: url("../img/webback.jpg");
-    /* Full height */
-    min-height: 100vh;
-    min-width: 100vw;
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: auto;
-}
-
 
 a, .btn-link {
     color: #d7d7d7;

@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "secrets1": {
-      "type": "secrets"
+      "type": "secrets.user"
     }
   }
 }
