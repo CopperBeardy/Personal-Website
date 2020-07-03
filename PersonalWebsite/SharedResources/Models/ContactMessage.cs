@@ -1,6 +1,8 @@
-﻿namespace SharedResources.Models
+﻿
+
+namespace SharedResources.Models
 {
-    public class ContactMessage
+    public class ContactMessage 
     {
 
      
